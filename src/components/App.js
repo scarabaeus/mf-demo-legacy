@@ -1,26 +1,27 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import Module1 from './Module1';
-import Module2 from './Module2';
+import ModuleA from './ModuleA';
+import ModuleB from './ModuleB';
+import './App.css';
 
 const App = () => {
   return (
     <Router>
       <nav>
         <span>
-          <Link to="/">Module 1</Link>
+          <Link to="/">Module A</Link>
         </span>{' '}
         |{' '}
         <span>
-          <Link to="/module2">Module 2</Link>
+          <Link to="/moduleB">Module B</Link>
         </span>
       </nav>
       <Switch>
-        <Route path="/module2">
-          <Module2 />
+        <Route path="/moduleB">
+          <ModuleB />
         </Route>
         <Route path="/">
-          <Module1 />
+          <ModuleA />
         </Route>
       </Switch>
     </Router>

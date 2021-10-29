@@ -3,10 +3,14 @@ const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPl
 module.exports = {
   mode: 'development',
   devServer: {
-    port: 8083,
+    port: 8084,
+  },
+  output: {
+    uniqueName: 'mf-demo-legacy',
   },
   module: {
     rules: [
+      { test: /\.css$/, use: ['style-loader', 'css-loader'] },
       {
         /* The following line to ask babel 
              to compile any file with extension
@@ -28,11 +32,11 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'Application1',
+      name: 'LegacyApplication',
       filename: 'remoteEntry.js',
       exposes: {
-        './Module1': './src/components/Module1',
-        './Module2': './src/components/Module2',
+        './ModuleA': './src/components/ModuleA',
+        './ModuleB': './src/components/ModuleB',
       },
     }),
     new HtmlWebpackPlugin({

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Module1 = ({ name = 'directly' }) => (
+const ModuleA = ({ name = 'directly' }) => (
   <div style={{ display: 'flex', flex: 1, flexDirection: 'column' }}>
     <div
       style={{
@@ -10,25 +10,25 @@ const Module1 = ({ name = 'directly' }) => (
         paddingLeft: '1rem',
       }}
     >
-      Application 1 Module 1 - Loaded {name}
+      Legacy Module A - Loaded {name}
     </div>
     <div style={{ marginTop: '1rem' }}>
       mf-demo-legacy Dependencies:
       <ul>
         <li>
-          <code>react 17.0.2</code>
+          <code>react 16.12.0</code>
         </li>
         <li>
-          <code>react-router 17.0.2</code>
+          <code>react-router 16.12.0</code>
         </li>
         <li>
-          <code>react-router-dom 5.3.0</code>
+          <code>react-router-dom 5.1.0</code>
         </li>
       </ul>
     </div>
     <div style={{ flex: 1, marginTop: '1rem' }}>
-      <button>Module 1 Button</button>
+      <button>Legacy Module A Button</button>
     </div>
   </div>
 );
-export default Module1;
+export default ModuleA;

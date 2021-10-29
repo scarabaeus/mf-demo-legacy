@@ -2,7 +2,7 @@ import React from 'react';
 
 const Section2 = () => (
   <div>
-    <img src="https://via.placeholder.com/300/FF0000/FFFFFF/?text=Section+2" />
+    <img src="https://via.placeholder.com/300/FF00FF/FFFFFF/?text=Legacy+Section+2" />
   </div>
 );
 
