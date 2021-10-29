@@ -5,9 +5,9 @@ module.exports = {
   devServer: {
     port: 8084,
   },
-  output: {
-    uniqueName: 'mf-demo-legacy',
-  },
+  // output: {
+  //   uniqueName: 'mf-demo-legacy',
+  // },
   module: {
     rules: [
       { test: /\.css$/, use: ['style-loader', 'css-loader'] },

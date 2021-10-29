@@ -7,6 +7,7 @@ import './App.css';
 const App = () => {
   return (
     <Router>
+      <React.Fragment>
       <nav>
         <span>
           <Link to="/">Module A</Link>
@@ -24,6 +25,7 @@ const App = () => {
           <ModuleA />
         </Route>
       </Switch>
+      </React.Fragment>
     </Router>
   );
 };
