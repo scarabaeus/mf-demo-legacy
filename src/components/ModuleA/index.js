@@ -1,8 +1,23 @@
 import React from 'react';
 import "./index.css"
 
-const ModuleA = ({ name = 'directly' }) => (
-  <div style={{ display: 'flex', flex: 1, flexDirection: 'column' }}>
+class ModuleA extends React.Component {
+  constructor({name = 'directly' }) {
+    super();
+    this.state = { text: '' };
+    this.name = name;
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange(event) {
+    console.log(event.target.value);
+    this.setState(() => ({
+      text: event.target.value
+    }));
+  }
+  render() {
+    return (
+      
+      <div style={{ display: 'flex', flex: 1, flexDirection: 'column' }}>
     <div className="collision-test">Collisions Test: Defined as red</div>
     <div
       style={{
@@ -12,13 +27,13 @@ const ModuleA = ({ name = 'directly' }) => (
         paddingLeft: '1rem',
       }}
     >
-      Legacy Module A - Loaded {name}
+      Legacy Module A - Loaded {this.name}
     </div>
     <div style={{ marginTop: '1rem' }}>
       mf-demo-legacy Dependencies:
       <ul>
         <li>
-          <code>react 16.2.0</code>
+          <code>react {React.version}</code>
         </li>
         <li>
           <code>react-router 16.2.0</code>
@@ -29,8 +44,12 @@ const ModuleA = ({ name = 'directly' }) => (
       </ul>
     </div>
     <div style={{ flex: 1, marginTop: '1rem' }}>
-      <button>Legacy Module A Button</button>
+      <span>Text: </span>
+        <input onChange={this.handleChange} value={this.state.text} />
     </div>
   </div>
-);
+    );
+  }
+}
+
 export default ModuleA;
