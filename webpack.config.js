@@ -37,6 +37,7 @@ module.exports = {
       exposes: {
         './ModuleA': './src/components/ModuleA',
         './ModuleB': './src/components/ModuleB',
+        './Module1MenuItem': './src/components/Module1MenuItem'
       },
     }),
     new HtmlWebpackPlugin({
